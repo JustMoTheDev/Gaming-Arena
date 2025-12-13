@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="../assets/buttons.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Arena: Game Pass/Bundle Order Form</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="style.css"> 
+
+    <script>
+        // Custom colors defined as CSS variables in styles.css are referenced here
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': 'var(--primary-blue)', 
+                        'accent-cyan': 'var(--accent-cyan)',  
+                        'charcoal': 'var(--charcoal)',     
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen p-4 sm:p-8 text-white bg-charcoal flex items-center justify-center">
+
+    <div class="max-w-xl w-full mx-auto">
+
+        <header class="text-center mb-10">
+            <h1 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-accent-cyan tracking-tight">
+                Order Your Game Passes & Bundles
+            </h1>
+            <p class="text-gray-400 mt-2 text-lg">Gaming Arena: List all the games and passes you need below.</p>
+        </header>
+
+        <div id="successMessage" class="hidden p-6 mb-8 rounded-lg border-2 border-primary-blue bg-gray-900/70 text-center shadow-lg transition-all duration-300">
+            <p class="text-3xl font-bold text-green-400 mb-2">✅ Order Sent!</p>
+            <p class="text-xl">Form submitted via FormBold. You should be redirected now!</p>
+        </div>
+
+
+        <form id="orderForm" action="https://formbold.com/s/3pn1b" method="POST" class="space-y-6 bg-gray-800 p-8 rounded-xl shadow-2xl border border-gray-700/50">
+            
+            <input type="hidden" name="subject" value="New Gaming Arena Pass/Bundle Order">
+            
+            <div>
+                <label for="gameNameInput" class="block text-lg font-semibold mb-2 text-accent-cyan">Game Name(s) Requested:</label>
+                <textarea id="gameNameInput" name="Game_Name" rows="3" required placeholder="e.g., Cyberpunk 2077, Elden Ring, Grand Theft Auto V. List each game on a new line." class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-gray-200 focus:ring-primary-blue focus:border-primary-blue transition duration-150 ease-in-out"></textarea>
+                <p class="text-sm text-gray-400 mt-2">Required. List the name of the game(s) you need.</p>
+            </div>
+            
+            <div>
+                <label for="passBundleInput" class="block text-lg font-semibold mb-2 text-accent-cyan">Specific Pass / IN-GAME Bundle (If applicable):</label>
+                <textarea id="passBundleInput" name="Pass_Bundle_Item" rows="3" placeholder="e.g., Ultimate Pass (12 Mo), or, 13,500 V-Bucks, or, Season 5 Battle Pass. List multiple passes on new lines." class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-gray-200 focus:ring-primary-blue focus:border-primary-blue transition duration-150 ease-in-out"></textarea>
+                <p class="text-sm text-gray-400 mt-2">Required for passes/bundles, otherwise leave blank or write N/A.</p>
+            </div>
+            
+            <div>
+                <label for="messageInput" class="block text-lg font-semibold mb-2 text-accent-cyan">Additional Notes (Optional):</label>
+                <textarea id="messageInput" name="message" rows="3" placeholder="Any special instructions, questions, or specific delivery details go here." class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-gray-200 focus:ring-primary-blue focus:border-primary-blue transition duration-150 ease-in-out"></textarea>
+                <p class="text-sm text-gray-400 mt-2">Use this for any extra context for the Gaming Arena team.</p>
+            </div>
+            
+            <div>
+                <label for="fullName" class="block text-lg font-semibold mb-2 text-accent-cyan">Full Name:</label>
+                <input type="text" id="fullName" name="name" required placeholder="John Doe" class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-gray-200 focus:ring-primary-blue focus:border-primary-blue transition duration-150 ease-in-out">
+            </div>
+
+            <div>
+                <label for="phoneNum" class="block text-lg font-semibold mb-2 text-accent-cyan">Phone Number:</label>
+                <input type="tel" id="phoneNum" name="phone_number" required placeholder="+20 XXX XXX XXXX" class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-gray-200 focus:ring-primary-blue focus:border-primary-blue transition duration-150 ease-in-out">
+            </div>
+
+            <div>
+                <label for="emailAddress" class="block text-lg font-semibold mb-2 text-accent-cyan">Email Address:</label>
+                <input type="email" id="emailAddress" name="email" required placeholder="example@gmail.com" class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-gray-200 focus:ring-primary-blue focus:border-primary-blue transition duration-150 ease-in-out">
+            </div>
+
+            <button id="submitButton" type="submit" class="w-full py-3 mt-8 font-extrabold text-xl rounded-lg shadow-xl transform transition-all duration-300
+                bg-accent-cyan hover:bg-primary-blue text-gray-900
+                hover:scale-[1.02] hover:shadow-2xl hover:shadow-accent-cyan/50 focus:outline-none focus:ring-4 focus:ring-accent-cyan/70">
+                Place Order
+            </button>
+        </form>
+    </div>
+
+    <script>
+        // No JavaScript needed for item list generation or submission handling now.
+    </script>
+</body>
+</html>
